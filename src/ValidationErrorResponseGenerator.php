@@ -35,6 +35,6 @@ final class ValidationErrorResponseGenerator implements ErrorResponseGeneratorIn
         $response = $this->responseFactory->createResponse(400);
         $response->getBody()->write(json_encode($e->getErrors()));
 
-        return $response->withHeader('content-type', 'application\json');
+        return $response->withHeader('content-type', 'application/json');
     }
 }
