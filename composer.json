@@ -9,6 +9,6 @@
     "require": {
         "php": "^8.1",
         "bermudaphp/http-contracts": "^1.1",
-        "bermudaphp/error-handler": "^2.1"
+        "bermudaphp/error-handler": "^2.0"
     }
 }
