@@ -12,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface;
 final class ValidationErrorResponseGenerator implements ErrorResponseGeneratorInterface, ResponseFactoryAwareInterface
 {
     use ResponseFactoryAwareTrait;
-    public function canGenerate(Throwable $e, ServerRequestInterface $request = null): bool
+    public function canGenerate(Throwable $e): bool
     {
         return $e instanceof ValidationException;
     }
@@ -23,7 +23,7 @@ final class ValidationErrorResponseGenerator implements ErrorResponseGeneratorIn
      * @return ResponseInterface
      * @throws Throwable
      */
-    public function generateResponse(Throwable $e, ServerRequestInterface $request = null): ResponseInterface
+    public function generateResponse(Throwable $e): ResponseInterface
     {
         if (!$this->canGenerate($e)) {
             throw $e;
